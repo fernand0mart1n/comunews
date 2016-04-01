@@ -35,4 +35,20 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/home', 'HomeController@index');
 
+    Route::get('/crear_noticia', function () {
+	    return view('perfil.crear_noticia');
+	});
+
+	Route::get('/mis_noticias', function () {
+	    return view('perfil.mis_noticias');
+	});
+
+	Route::get('/mis_suscriptores', function () {
+	    return view('perfil.mis_suscriptores');
+	});
+
+	Route::get('/editar_perfil', function () {
+	    return view('perfil.editar_perfil');
+	});
+
 });
