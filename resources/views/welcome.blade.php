@@ -15,12 +15,12 @@
         <div class="well">
         <div class="row">
 
-            <div class="col-sm-4 col-md-12">
+            <div class="col-xs-6 col-sm-6 col-md-12">
                 <div class="thumbnail">
                   <img src="images/tumb.svg" alt="...">
                   <div class="caption">
                     <h3>Noticia urgente</h3>
-                    <p>Esta es una noticia preliminal de prueba para la web
+                    <p class="hidden-xs">Esta es una noticia preliminal de prueba para la web
                         de noticias, sera reemplazada en breve por contenido
                         de usuarios registrados a la web.</p>
                     
@@ -28,12 +28,12 @@
                 </div>
             </div>
 
-            <div class="col-sm-4 col-md-12">
+            <div class="col-xs-6 col-sm-6 col-md-12">
                 <div class="thumbnail">
                   <img src="images/tumb.svg" alt="...">
                   <div class="caption">
                     <h3>Noticia urgente</h3>
-                    <p>Esta es una noticia preliminal de prueba para la web
+                    <p class="hidden-xs">Esta es una noticia preliminal de prueba para la web
                         de noticias, sera reemplazada en breve por contenido
                         de usuarios registrados a la web.</p>
                     
@@ -47,12 +47,12 @@
 
         <div class="col-md-9">
         <div class="row">
-            <div class="col-sm-4 col-md-4">
+            <div class="col-xs-6 col-sm-6 col-md-4">
                 <div class="thumbnail">
                   <img src="images/tumb.svg" alt="...">
                   <div class="caption">
                     <h3>Noticia urgente</h3>
-                    <p>Esta es una noticia preliminal de prueba para la web
+                    <p class="hidden-xs">Esta es una noticia preliminal de prueba para la web
                         de noticias, sera reemplazada en breve por contenido
                         de usuarios registrados a la web.</p>
                     
@@ -60,12 +60,12 @@
                 </div>
             </div>
 
-            <div class="col-sm-4 col-md-4">
+            <div class="col-xs-6 col-sm-6 col-md-4">
                 <div class="thumbnail">
                   <img src="images/tumb.svg" alt="...">
                   <div class="caption">
                     <h3>Noticia urgente</h3>
-                    <p>Esta es una noticia preliminal de prueba para la web
+                    <p class="hidden-xs">Esta es una noticia preliminal de prueba para la web
                         de noticias, sera reemplazada en breve por contenido
                         de usuarios registrados a la web.</p>
                     
@@ -73,12 +73,12 @@
                 </div>
               </div>
 
-            <div class="col-sm-4 col-md-4">
+            <div class="col-xs-6 col-sm-6 col-md-4">
                 <div class="thumbnail">
                   <img src="images/tumb.svg" alt="...">
                   <div class="caption">
                     <h3>Noticia urgente</h3>
-                    <p>Esta es una noticia preliminal de prueba para la web
+                    <p class="hidden-xs">Esta es una noticia preliminal de prueba para la web
                         de noticias, sera reemplazada en breve por contenido
                         de usuarios registrados a la web.</p>
                     
@@ -86,12 +86,12 @@
                 </div>
             </div>
 
-            <div class="col-sm-4 col-md-4">
+            <div class="col-xs-6 col-sm-6 col-md-4">
                 <div class="thumbnail">
                   <img src="images/tumb.svg" alt="...">
                   <div class="caption">
                     <h3>Noticia urgente</h3>
-                    <p>Esta es una noticia preliminal de prueba para la web
+                    <p class="hidden-xs">Esta es una noticia preliminal de prueba para la web
                         de noticias, sera reemplazada en breve por contenido
                         de usuarios registrados a la web.</p>
                     
@@ -99,12 +99,12 @@
                 </div>
             </div>
 
-            <div class="col-sm-4 col-md-4">
+            <div class="col-xs-6 col-sm-6 col-md-4">
                 <div class="thumbnail">
                   <img src="images/tumb.svg" alt="...">
                   <div class="caption">
                     <h3>Noticia urgente</h3>
-                    <p>Esta es una noticia preliminal de prueba para la web
+                    <p class="hidden-xs">Esta es una noticia preliminal de prueba para la web
                         de noticias, sera reemplazada en breve por contenido
                         de usuarios registrados a la web.</p>
                     
@@ -112,12 +112,12 @@
                 </div>
             </div>
 
-            <div class="col-sm-4 col-md-4">
+            <div class="col-xs-6 col-sm-6 col-md-4">
                 <div class="thumbnail">
                   <img src="images/tumb.svg" alt="...">
                   <div class="caption">
                     <h3>Noticia urgente</h3>
-                    <p>Esta es una noticia preliminal de prueba para la web
+                    <p class="hidden-xs">Esta es una noticia preliminal de prueba para la web
                         de noticias, sera reemplazada en breve por contenido
                         de usuarios registrados a la web.</p>
                     
@@ -125,12 +125,12 @@
                 </div>
             </div>
 
-            <div class="col-sm-4 col-md-4">
+            <div class="col-xs-6 col-sm-6 col-md-4">
                 <div class="thumbnail">
                   <img src="images/tumb.svg" alt="...">
                   <div class="caption">
                     <h3>Noticia urgente</h3>
-                    <p>Esta es una noticia preliminal de prueba para la web
+                    <p class="hidden-xs">Esta es una noticia preliminal de prueba para la web
                         de noticias, sera reemplazada en breve por contenido
                         de usuarios registrados a la web.</p>
                     
@@ -138,12 +138,12 @@
                 </div>
             </div>
 
-            <div class="col-sm-4 col-md-4">
+            <div class="col-xs-6 col-sm-6 col-md-4">
                 <div class="thumbnail">
                   <img src="images/tumb.svg" alt="...">
                   <div class="caption">
                     <h3>Noticia urgente</h3>
-                    <p>Esta es una noticia preliminal de prueba para la web
+                    <p class="hidden-xs">Esta es una noticia preliminal de prueba para la web
                         de noticias, sera reemplazada en breve por contenido
                         de usuarios registrados a la web.</p>
                     
