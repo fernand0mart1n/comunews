@@ -13,7 +13,19 @@
   <div class="col-md-12">
   <div class="row">
 
-  	<h1>Hola</h1>
+  	@foreach ($miContenido as $noticia)
+
+	<div class="col-xs-6 col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="{{ $noticia->imagen }}" alt="...">
+          <div class="caption">
+            <h3>{{ $noticia->titulo }}</h3>
+            <p class="hidden-xs">{{ $noticia->descripcion }}</p>          
+          </div>
+        </div>
+    </div>
+
+	@endforeach
 
   </div>
   </div>

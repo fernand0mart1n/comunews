@@ -11,6 +11,14 @@
 |
 */
 
+Route::group(['middleware' => ['web']], function () {
+    
+	Route::get('/', function () {
+	    return view('welcome');
+	});
+    
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -22,25 +30,14 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    
-	Route::get('/', function () {
-	    return view('welcome');
-	});
-    
-});
-
 Route::group(['middleware' => 'web'], function () {
+
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
 
     Route::get('/crear_noticia', function () {
 	    return view('perfil.crear_noticia');
-	});
-
-	Route::get('/mis_noticias', function () {
-	    return view('perfil.mis_noticias');
 	});
 
 	Route::get('/mis_suscriptores', function () {
@@ -50,5 +47,9 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('/editar_perfil', function () {
 	    return view('perfil.editar_perfil');
 	});
+
+	Route::get('/mis_noticias','NoticiasController@mis_noticias');
+
+	Route::post('/nueva_noticia','NoticiasController@nueva_noticia');
 
 });
