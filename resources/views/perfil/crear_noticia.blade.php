@@ -22,14 +22,26 @@
 
     	<form method="POST" action="{{ url('/nueva_noticia') }}">
 
+    		{!! csrf_field() !!}
+
+    		<div class="form-group col-lg-12">
+
+    		<label for="titulo"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;Titulo</label>
+          	<input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo de tu Noticia">
+
+	          <label for="textArea" class="control-label" style="margin:10px">Descripcion Breve</label>
+	          <textarea class="form-control" rows="3" id="textArea" name="descripcion"></textarea>
+	          <span class="help-block">Una breve descripcion sobre tu noticia.</span>
+	        </div>
+
     		<div class="col-md-12">
-	            <textarea name="editor1" id="editor1" rows="10" cols="80">
+	            <textarea name="contenido" id="contenido" rows="10" cols="80">
 	                Comienza a crear tu noticia aqui..
 	            </textarea>
 	            <script>
-	                // Replace the <textarea id="editor1"> with a CKEditor
+	                // Replace the <textarea id="contenido"> with a CKEditor
 	                // instance, using default configuration.
-	                CKEDITOR.replace( 'editor1' );
+	                CKEDITOR.replace( 'contenido' );
 	            </script>
 	        </div>
 

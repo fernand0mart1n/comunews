@@ -6,13 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class noticias extends Model
 {
-    protected $fillable = ['persona_id', 'documento'];
 
     public function usuario_noticia()
     {
-        return $this->belongsTo('App\user', 'id');
+        return $this->belongsTo('App\User', 'autor');
     }
 
-    protected $primaryKey = 'id';
-    protected $table = 'noticias';
 }

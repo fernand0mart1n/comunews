@@ -20,26 +20,28 @@ class NoticiasController extends Controller
 		$usuarioid = Auth::user();
         $user = User::find($usuarioid->id);
 
-        $miContenido = Noticias::where('autor', '=', '$user->id')->get();
+        $miContenido = Noticias::where('autor', '=', "$user->id")->get();
 
         return view('perfil.mis_noticias',compact('miContenido'));
 	}
 	
 	public function nueva_noticia(Request $req) {
 
+		/*
 		$this->validate($request, [
             'editor1'    => 'min:150|max:1500',
         ]);
-
-		$contenido = $req->input('editor1');
+		*/
 
 		$usuarioid = Auth::user();
         $user = User::find($usuarioid->id);
 
         $noticia = new Noticias;
 
-        $noticia->autor 	= $user->id;
-        $noticia->contenido = $contenido;
+        $noticia->titulo		= $req->input('titulo');
+        $noticia->autor 		= $user->id;
+        $noticia->descripcion	= $req->input('descripcion');
+        $noticia->contenido 	= $req->input('contenido');
 
         $noticia->save();
 
