@@ -83,13 +83,17 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    background: url('background.jpg') no-repeat center center;
+    background: url("{{ asset('images/background.jpg') }}") no-repeat center center;
     background-size: cover;
     z-index: -1;
   }
 
   .thumbnail {
     background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  .noticia{
+    height:400px;
   }
 
   </style>
@@ -113,7 +117,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Comunews &nbsp; &nbsp; <img src="big-logo.png" style="zoom: 28%;" class="pull-right">
+                    Comunews &nbsp; &nbsp; <img src="{{ asset('images/big-logo.png') }}" style="zoom: 28%;" class="pull-right">
                 </a>
 
 
@@ -170,10 +174,13 @@
     
   </div>
 </div>
-    <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+  <!-- JavaScripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+  <script type="text/javascript">
+
+  </script>
 </body>
 </html>
 

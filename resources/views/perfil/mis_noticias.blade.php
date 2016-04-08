@@ -21,11 +21,13 @@
 		  </div>
 		</div>
 
-
     @else
 	  	@foreach ($miContenido as $noticia)
 
-		<div class="col-xs-6 col-sm-6 col-md-4">
+		<div class="col-xs-6 col-sm-6 col-md-4 noticia">
+
+			<a href='{{ url("/noticia/$noticia->id/$noticia->url") }}'>
+
 	        <div class="thumbnail">
 	          <img src="images/{{ $noticia->imagen }}" alt="...">
 	          <div class="caption">
@@ -33,12 +35,18 @@
 	            <p class="hidden-xs">{{ $noticia->descripcion }}</p>          
 	          </div>
 	        </div>
+
+	        </a>
 	    </div>
 
 		@endforeach
+
 	@endif
 
   </div>
+  {!! $miContenido->render() !!}
   </div>
+
 </div>
+
 @endsection

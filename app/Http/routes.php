@@ -52,4 +52,6 @@ Route::group(['middleware' => 'web'], function () {
 
 	Route::post('/nueva_noticia','NoticiasController@nueva_noticia');
 
+	Route::get('/noticia/{id}/{titulo}','NoticiasController@ver_noticia');
+
 });

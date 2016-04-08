@@ -48,7 +48,7 @@
 	        &nbsp;
 
             <div class="form-group">
-                <div class="col-md-12 col-md-offset-10">
+                <div class="col-md-offset-10">
                     <button type="submit" class="btn btn-primary">
                         <i class="fa fa-btn fa-user"></i>Guardar
                     </button>
