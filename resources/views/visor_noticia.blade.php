@@ -44,13 +44,10 @@
       		
   			<?php echo $miNoticia->contenido; ?>
 
-
         <a href="#" class="btn btn-primary">Editar Noticia</a>
         <a href="#" class="btn btn-danger">Eliminar Noticia</a>
+
   		</div>
-
-
-
 	</div>
 </div>
 

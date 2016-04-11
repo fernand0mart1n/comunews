@@ -20,18 +20,21 @@
 
     	<legend>Crear Noticia</legend>
 
-    	<form method="POST" action="{{ url('/nueva_noticia') }}">
+    	<form method="POST" action="{{ url('/nueva_noticia') }}" accept-charset="UTF-8" enctype="multipart/form-data">
 
     		{!! csrf_field() !!}
 
     		<div class="form-group col-lg-12">
 
-    		<label for="titulo"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;Titulo</label>
-          	<input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo de tu Noticia">
+        		<label for="titulo"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;Titulo</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo de tu Noticia"><br>
 
-	          <label for="textArea" class="control-label" style="margin:10px">Descripcion Breve</label>
-	          <textarea class="form-control" rows="3" id="textArea" name="descripcion"></textarea>
-	          <span class="help-block">Una breve descripcion sobre tu noticia.</span>
+                <label for="miniatura"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;Miniatura</label>
+                <input type="file"  id="miniatura" name="miniatura" placeholder="Miniatura de la noticia"><br>
+
+    	        <label for="textArea"><span class="glyphicon glyphicon-align-center"></span>&nbsp;&nbsp;&nbsp;Descripcion Breve</label>
+    	        <textarea class="form-control" rows="3" id="textArea" name="descripcion"></textarea>
+    	        <span class="help-block">Una breve descripcion sobre tu noticia.</span>
 	        </div>
 
     		<div class="col-md-12">

@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
 
     <!-- Styles -->
-<link href="https://bootswatch.com/lumen/bootstrap.min.css" rel='stylesheet' type='text/css'>
+    <link href="https://bootswatch.com/lumen/bootstrap.min.css" rel='stylesheet' type='text/css'>
 
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
@@ -96,6 +96,11 @@
     height:400px;
   }
 
+  img{
+    width: 100%;
+    height: 100%;
+  }
+
   </style>
 
 </head>
@@ -117,7 +122,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Comunews &nbsp; &nbsp; <img src="{{ asset('images/big-logo.png') }}" style="zoom: 28%;" class="pull-right">
+                    Comunews
                 </a>
 
 

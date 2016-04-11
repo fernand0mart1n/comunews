@@ -26,7 +26,7 @@
 
 		<div class="col-xs-6 col-sm-6 col-md-4 noticia">
 
-			<a href='{{ url("/noticia/$noticia->id/$noticia->url") }}'>
+			<a href='{{ url("/noticia/$noticia->id/$noticia->url") }}' style="text-decoration:none">
 
 	        <div class="thumbnail">
 	          <img src="images/{{ $noticia->imagen }}" alt="...">

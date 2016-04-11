@@ -12,6 +12,8 @@ use App\Noticias;
 
 use App\User;
 
+use Carbon\Carbon;
+
 class NoticiasController extends Controller
 {
 
@@ -73,9 +75,11 @@ class NoticiasController extends Controller
 		$usuarioid = Auth::user();
         $user = User::find($usuarioid->id);
 
-        $archivo = $req->file('file');
+        $archivo = $req->file('miniatura');
 
-        $nombreImagen = $user->name.$archivo->getClientOriginalName();
+        $nombreImagen = $user->name.'|'.Carbon::now()->toDateTimeString().'|'.$archivo->getClientOriginalName();
+
+        \Storage::disk('local')->put($nombreImagen,  \File::get($archivo));
 
         $noticia = new Noticias;
 
