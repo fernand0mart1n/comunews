@@ -22,24 +22,38 @@
 		</div>
 
     @else
+
+    	<div class="list-group">
 	  	@foreach ($miContenido as $noticia)
+   
+		  	<a href='{{ url("/noticia/$noticia->id/$noticia->url") }}' class="list-group-item">
 
-		<div class="col-xs-6 col-sm-6 col-md-4 noticia">
+			<div class="media">
+			  <div class="media-left">
+			      <img src="images/{{ $noticia->imagen }}" alt="..." class="imgNoticia">
+			  </div>
+			  <div class="media-body">
+			    
+				<div class="row">
+					<div class="col-md-8">
+						<h4 class="list-group-item-heading">{{ $noticia->titulo }}</h4>
+		    			<p class="list-group-item-text">{{ $noticia->descripcion }}</p>
+					</div>
 
-			<a href='{{ url("/noticia/$noticia->id/$noticia->url") }}' style="text-decoration:none">
+					<div class="col-md-4">
+						<h4>Autor: {{ $noticia->usuario_noticia->name }} </h4>
+						<h5>Visitas: 1240 - Puntaje promedio: 7,2</h5>
+						
+					</div>
+				</div>
 
-	        <div class="thumbnail">
-	          <img src="images/{{ $noticia->imagen }}" alt="...">
-	          <div class="caption">
-	            <h3>{{ $noticia->titulo }}</h3>
-	            <p class="hidden-xs">{{ $noticia->descripcion }}</p>          
-	          </div>
-	        </div>
+			  </div>
+			</div>	
 
-	        </a>
-	    </div>
-
+		  </a>
+		
 		@endforeach
+		</div>
 
 	@endif
 

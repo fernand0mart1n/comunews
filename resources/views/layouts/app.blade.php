@@ -96,9 +96,9 @@
     height:400px;
   }
 
-  img{
-    width: 100%;
-    height: 100%;
+  .imgNoticia{
+    width: 60px;
+    height: 60px;
   }
 
   </style>
