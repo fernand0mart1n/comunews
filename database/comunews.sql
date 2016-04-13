@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
+-- version 3.4.10.1deb1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Apr 12, 2016 at 03:59 PM
--- Server version: 5.5.46-0ubuntu0.14.04.2
--- PHP Version: 5.5.9-1ubuntu4.14
+-- Servidor: localhost
+-- Tiempo de generación: 13-04-2016 a las 12:37:08
+-- Versión del servidor: 5.5.47
+-- Versión de PHP: 5.6.17-3+deb.sury.org~precise+1
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `comunews`
+-- Base de datos: `comunews`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Estructura de tabla para la tabla `migrations`
 --
 
 CREATE TABLE IF NOT EXISTS `migrations` (
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Volcado de datos para la tabla `migrations`
 --
 
 INSERT INTO `migrations` (`migration`, `batch`) VALUES
@@ -42,7 +42,7 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `noticias`
+-- Estructura de tabla para la tabla `noticias`
 --
 
 CREATE TABLE IF NOT EXISTS `noticias` (
@@ -57,10 +57,10 @@ CREATE TABLE IF NOT EXISTS `noticias` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `autor` (`autor`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
 
 --
--- Dumping data for table `noticias`
+-- Volcado de datos para la tabla `noticias`
 --
 
 INSERT INTO `noticias` (`id`, `titulo`, `autor`, `imagen`, `descripcion`, `contenido`, `url`, `created_at`, `updated_at`) VALUES
@@ -73,12 +73,13 @@ INSERT INTO `noticias` (`id`, `titulo`, `autor`, `imagen`, `descripcion`, `conte
 (27, 'Clase de fabio salerno 2', 1, 'Alan Arza|2016-04-12 17:48:44|udc-talentos-sarmiento-th.jpg', 'Esta es otra clase de redes y seguridad informatica, en esta ocacion aprenderemos a crear nuestro propio socket chicos.. wiii', '<p>Comienza a crear tu noticia aqui..</p>\r\n', 'Clase-de-fabio-salerno-2', '2016-04-12 20:48:44', '2016-04-12 20:48:44'),
 (28, 'Clase de fabio salerno 3', 1, 'Alan Arza|2016-04-12 17:50:28|horario-REDES-2016-3erA-1er-768x587.gif', 'holandaaaaaaaaaaaaa', '<p>Comienza a crear tu noticia aqui..</p>\r\n', 'Clase-de-fabio-salerno-3', '2016-04-12 20:50:28', '2016-04-12 20:50:28'),
 (29, 'Otro aburrido titulo para una noticia', 1, 'Alan Arza|2016-04-12 17:50:53|copy-UDC-250-78.png', 'holandooooooooo', '<p>Comienza a crear tu noticia aqui..</p>\r\n', 'Otro-aburrido-titulo-para-una-noticia', '2016-04-12 20:50:53', '2016-04-12 20:50:53'),
-(30, 'Otro aburrido titulo para una noticia 2', 1, 'Alan Arza|2016-04-12 17:51:31|TutoresVirtuales1-198x250.png', 'la forma estandar de la red', '<p>Comienza a crear tu noticia aqui..</p>\r\n', 'Otro-aburrido-titulo-para-una-noticia-2', '2016-04-12 20:51:31', '2016-04-12 20:51:31');
+(30, 'Otro aburrido titulo para una noticia 2', 1, 'Alan Arza|2016-04-12 17:51:31|TutoresVirtuales1-198x250.png', 'la forma estandar de la red', '<p>Comienza a crear tu noticia aqui..</p>\r\n', 'Otro-aburrido-titulo-para-una-noticia-2', '2016-04-12 20:51:31', '2016-04-12 20:51:31'),
+(31, 'Alan Arza', 1, 'ArzaPersonal|2016-04-13 15:25:47|92x70_4F3.png', 'Programador compulsivo!!', '<p>Comienza a crear tu noticia aqui..</p>\r\n', 'Alan-Arza', '2016-04-13 18:25:47', '2016-04-13 18:25:47');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Estructura de tabla para la tabla `password_resets`
 --
 
 CREATE TABLE IF NOT EXISTS `password_resets` (
@@ -92,14 +93,18 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Estructura de tabla para la tabla `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nombres` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `apellidos` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `mi_descripcion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `imagen_perfil` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'tumb.svg',
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -108,19 +113,19 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 --
--- Dumping data for table `users`
+-- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Alan Arza', 'arzapersonal@gmail.com', '$2y$10$FJHVmUltDUdbADrLVTujneUwSmmztyG5up6sJ0bDPfXo9SE5d89QO', 'o6l8XwI3IvM2MqBZGWauzWgv9ixD22cD0Q17ZTBejv3AnTnU2XpALhzbsqq3', '2016-04-01 16:07:48', '2016-04-07 18:42:55'),
-(2, 'Francisco', 'fran123@asdasd.com', '$2y$10$hpm3iCttzA3NmL/y4T4lYewGx0hspAe3frQqMcSROj59XNFw/Vlrm', 'WYM0fjtiWiX3U886n1ZorA0LhrH2YCcOZjMpvkNa34dcePJE7szv7gNYa4rg', '2016-04-05 18:12:17', '2016-04-05 18:15:56');
+INSERT INTO `users` (`id`, `nombres`, `apellidos`, `name`, `email`, `password`, `mi_descripcion`, `imagen_perfil`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Eliezer Alan', 'Arza Leon', 'ArzaPersonal', 'arzapersonal@gmail.com', '$2y$10$FJHVmUltDUdbADrLVTujneUwSmmztyG5up6sJ0bDPfXo9SE5d89QO', 'Bienvenido a mi perfil personal, me gusta redactar noticias sobre informatica y avances tecnologicos. Soy estudiante universitario, estudio en la udc.', 'tumb.svg', 'o6l8XwI3IvM2MqBZGWauzWgv9ixD22cD0Q17ZTBejv3AnTnU2XpALhzbsqq3', '2016-04-01 16:07:48', '2016-04-07 18:42:55'),
+(2, 'Francisco', 'Perez', 'Francisco', 'fran123@asdasd.com', '$2y$10$hpm3iCttzA3NmL/y4T4lYewGx0hspAe3frQqMcSROj59XNFw/Vlrm', NULL, 'tumb.svg', 'WYM0fjtiWiX3U886n1ZorA0LhrH2YCcOZjMpvkNa34dcePJE7szv7gNYa4rg', '2016-04-05 18:12:17', '2016-04-05 18:15:56');
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `noticias`
+-- Filtros para la tabla `noticias`
 --
 ALTER TABLE `noticias`
   ADD CONSTRAINT `noticias_ibfk_1` FOREIGN KEY (`autor`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
