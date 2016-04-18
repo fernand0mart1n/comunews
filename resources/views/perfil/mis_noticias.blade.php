@@ -1,4 +1,4 @@
-@extends('home')
+@extends('perfil')
 
 @section('sidebar')
 	
@@ -30,7 +30,7 @@
 
 			<div class="media">
 			  <div class="media-left">
-			      <img src="images/{{ $noticia->imagen }}" alt="..." class="imgNoticia">
+			      <img src='{{ url("/images/$noticia->imagen") }}' alt="..." class="imgNoticia">
 			  </div>
 			  <div class="media-body">
 			    

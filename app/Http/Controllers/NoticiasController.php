@@ -20,11 +20,12 @@ class NoticiasController extends Controller
 	public function mis_noticias() {
 
 		$usuarioid = Auth::user();
-        $user = User::find($usuarioid->id);
 
-        $miContenido = Noticias::where('autor', '=', "$user->id")->paginate(9);
+        $usuario = User::find($usuarioid->id);
 
-        return view('perfil.mis_noticias',compact('miContenido'));
+        $miContenido = Noticias::where("autor", $usuario->id)->paginate(9);
+
+        return view('perfil.mis_noticias',compact('miContenido','usuario'));
 	}
 	
 	public function nueva_noticia(Request $req) {
@@ -99,9 +100,13 @@ class NoticiasController extends Controller
 
         $miNoticia = Noticias::find($id);
 
+        $usuarioid = Auth::user();
+
+        $usuario = User::find($usuarioid->id);
+
         if($miNoticia->url == $titulo)
         {
-            return view('visor_noticia',compact('miNoticia'));
+            return view('visor_noticia',compact('miNoticia','usuario'));
         }
 
 

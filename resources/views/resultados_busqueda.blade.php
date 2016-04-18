@@ -3,7 +3,7 @@
 @section('navbar')
 
   <li ><a href="{{ url('/') }}">Inicio <span class="sr-only">(current)</span></a></li>
-  <li ><a href="{{ url('/home') }}">Perfil <span class="sr-only">(current)</span></a></li>
+  <li ><a href="{{ url('/perfil') }}">Perfil <span class="sr-only">(current)</span></a></li>
 
 @endsection
 

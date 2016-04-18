@@ -30,25 +30,26 @@ Route::group(['middleware' => ['web']], function () {
 |
 */
 
+
 Route::group(['middleware' => 'web'], function () {
 
     Route::auth();
 
-    Route::get('/home', 'HomeController@index');
+    //Route::get('/perfil/publico/{user}', 'PagesController@perfil');
 
-    Route::get('/crear_noticia', function () {
-	    return view('perfil.crear_noticia');
-	});
+    Route::get('/', 'PagesController@index');
 
-	Route::get('/mis_suscriptores', function () {
-	    return view('perfil.mis_suscriptores');
-	});
+    Route::get('/perfil', 'PagesController@perfil');
 
-	Route::get('/editar_perfil', function () {
-	    return view('perfil.editar_perfil');
-	});
+    Route::get('/perfil/crear_noticia', 'PagesController@crear_noticia');
 
-	Route::get('/mis_noticias','NoticiasController@mis_noticias');
+    Route::get('/perfil/mis_noticias','NoticiasController@mis_noticias');
+
+    Route::get('/perfil/mis_suscriptores', 'PagesController@mis_suscriptores');
+
+    Route::get('/perfil/editar_perfil', 'PagesController@editar_perfil');
+
+	
 
 	Route::post('/nueva_noticia','NoticiasController@nueva_noticia');
 

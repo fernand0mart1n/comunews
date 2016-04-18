@@ -3,7 +3,7 @@
 @section('navbar')
 
   <li ><a href="{{ url('/') }}">Inicio <span class="sr-only">(current)</span></a></li>
-  <li class="active"><a href="{{ url('/home') }}">Perfil <span class="sr-only">(current)</span></a></li>
+  <li class="active"><a href='{{ url("/perfil") }}'>Perfil <span class="sr-only">(current)</span></a></li>
 
 @endsection
 
@@ -11,10 +11,10 @@
 <div class="col-md-3">
 
   <div class="list-group">
-    <a href="/crear_noticia" class="list-group-item @yield('estado1')"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> &nbsp;&nbsp;&nbsp; Crear Noticia</a>
-    <a href="/mis_noticias" class="list-group-item @yield('estado2')"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> &nbsp;&nbsp;&nbsp;Mis noticias</a>
-    <a href="/mis_suscriptores" class="list-group-item @yield('estado3')"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> &nbsp;&nbsp;&nbsp;Mis suscriptores</a>
-    <a href="/editar_perfil" class="list-group-item @yield('estado4')"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> &nbsp;&nbsp;&nbsp;Editar perfil</a>
+    <a href='{{ url("/perfil/crear_noticia") }}' class="list-group-item @yield('estado1')"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> &nbsp;&nbsp;&nbsp; Crear Noticia</a>
+    <a href='{{ url("/perfil/mis_noticias") }}' class="list-group-item @yield('estado2')"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> &nbsp;&nbsp;&nbsp;Mis noticias</a>
+    <a href='{{ url("/perfil/mis_suscriptores") }}' class="list-group-item @yield('estado3')"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> &nbsp;&nbsp;&nbsp;Mis suscriptores</a>
+    <a href='{{ url("/perfil/editar_perfil") }}' class="list-group-item @yield('estado4')"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> &nbsp;&nbsp;&nbsp;Editar perfil</a>
   </div>
 
   <div class="panel panel-default">
@@ -40,16 +40,13 @@
     <div class="panel-body">
 
       <div class="col-md-4">
-        <img src="images/tumb.svg" alt="..." style="zoom: 78%;">
+        <img src='{{ url("/images/tumb.svg") }}' alt="..." style="zoom: 78%;">
       </div>
       
       <div class="col-sm-8">
-        <legend>Alan Arza</legend>
+        <legend>{{ $usuario->nombres }} {{ $usuario->apellidos }}</legend>
 
-        <p class="lead">Bienvenido a mi perfil personal, 
-            me gusta redactar noticias sobre informatica
-            y avances tecnologicos. Mi libro luna de pluton,
-            esta siendo un exito en toda argentina, mexico.</p>
+        <p class="lead">{{ $usuario->mi_descripcion }}</p>
       </div>
 
     </div>
@@ -59,7 +56,7 @@
   <div class="row">
       <div class="col-xs-6 col-sm-6 col-md-4">
           <div class="thumbnail">
-            <img src="images/tumb.svg" alt="...">
+            <img src='{{ url("/images/tumb.svg") }}' alt="...">
             <div class="caption">
               <h3>Noticia urgente</h3>
               <p class="hidden-xs">Esta es una noticia preliminal de prueba para la web
@@ -72,7 +69,7 @@
 
       <div class="col-xs-6 col-sm-6 col-md-4">
           <div class="thumbnail">
-            <img src="images/tumb.svg" alt="...">
+            <img src='{{ url("/images/tumb.svg") }}' alt="...">
             <div class="caption">
               <h3>Noticia urgente</h3>
               <p class="hidden-xs">Esta es una noticia preliminal de prueba para la web
@@ -85,7 +82,7 @@
 
       <div class="col-xs-6 col-sm-6 col-md-4">
           <div class="thumbnail">
-            <img src="images/tumb.svg" alt="...">
+            <img src='{{ url("/images/tumb.svg") }}' alt="...">
             <div class="caption">
               <h3>Noticia urgente</h3>
               <p class="hidden-xs">Esta es una noticia preliminal de prueba para la web
@@ -98,7 +95,7 @@
 
       <div class="col-xs-6 col-sm-6 col-md-4">
           <div class="thumbnail">
-            <img src="images/tumb.svg" alt="...">
+            <img src='{{ url("/images/tumb.svg") }}' alt="...">
             <div class="caption">
               <h3>Noticia urgente</h3>
               <p class="hidden-xs">Esta es una noticia preliminal de prueba para la web
