@@ -11,10 +11,8 @@
 <div class="col-md-3">
 
   <div class="list-group">
-    <a href='{{ url("/perfil/crear_noticia") }}' class="list-group-item @yield('estado1')"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> &nbsp;&nbsp;&nbsp; Crear Noticia</a>
-    <a href='{{ url("/perfil/mis_noticias") }}' class="list-group-item @yield('estado2')"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> &nbsp;&nbsp;&nbsp;Mis noticias</a>
-    <a href='{{ url("/perfil/mis_suscriptores") }}' class="list-group-item @yield('estado3')"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> &nbsp;&nbsp;&nbsp;Mis suscriptores</a>
-    <a href='{{ url("/perfil/editar_perfil") }}' class="list-group-item @yield('estado4')"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> &nbsp;&nbsp;&nbsp;Editar perfil</a>
+    <a href='{{ url("/perfil/mis_noticias") }}' class="list-group-item @yield('estado1')"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> &nbsp;&nbsp;&nbsp;Ver noticias</a>
+    <a href='{{ url("/perfil/mis_suscriptores") }}' class="list-group-item @yield('estado2')"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span> &nbsp;&nbsp;&nbsp;Ver suscriptores</a>
   </div>
 
   <div class="panel panel-default">
@@ -44,9 +42,9 @@
       </div>
       
       <div class="col-sm-8">
-        <legend>{{ $usuario->nombres }} {{ $usuario->apellidos }}</legend>
+        <legend>{{ $ver_usuario->nombres }} {{ $ver_usuario->apellidos }}</legend>
 
-        <p class="lead">{{ $usuario->mi_descripcion }}</p>
+        <p class="lead">{{ $ver_usuario->mi_descripcion }}</p>
       </div>
 
     </div>

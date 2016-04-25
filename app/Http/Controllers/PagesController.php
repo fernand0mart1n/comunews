@@ -40,6 +40,19 @@ class PagesController extends Controller
 
     }
 
+    public function ver_perfil($name)
+    {
+
+        $usuarioid = Auth::user();
+
+        $usuario = User::find($usuarioid->id);
+
+        $ver_usuario = User::where("name",$name)->first();
+
+        return view('perfil_publico', compact('usuario','ver_usuario'));
+
+    }
+
     public function crear_noticia()
     {
 

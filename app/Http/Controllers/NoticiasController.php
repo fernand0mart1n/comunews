@@ -93,7 +93,7 @@ class NoticiasController extends Controller
 
         $noticia->save();
 
-        return redirect('/mis_noticias');
+        return redirect('/perfil/mis_noticias');
 	}
 
     public function ver_noticia($id, $titulo) {

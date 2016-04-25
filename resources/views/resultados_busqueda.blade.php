@@ -77,7 +77,7 @@
 
 	  	<div class="col-xs-6 col-sm-6 col-md-4">
 
-			<a href='{{ url("/$usuario->name") }}' style="text-decoration:none">
+			<a href='{{ url("ver_perfil/$usuario->name") }}' style="text-decoration:none">
 
 	        <div class="thumbnail">
 	          <img src="images/{{ $usuario->imagen_perfil }}" id="imgthumb" alt="...">
