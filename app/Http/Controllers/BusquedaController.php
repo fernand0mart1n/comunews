@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use DB;
+use App\DB;
+
+use App\User;
+
+use App\Noticias;
 
 class BusquedaController extends Controller
 {
@@ -14,16 +18,16 @@ class BusquedaController extends Controller
         
         $term = $req->input('buscar');
 
-        $usuarios = DB::table('users')
-            ->where('nombres', 'LIKE', '%'.$term.'%')
+        $usuarios = User::
+            where('nombres', 'LIKE', '%'.$term.'%')
             ->orWhere('apellidos', 'LIKE', '%'.$term.'%')
             ->orWhere('name', 'LIKE', '%'.$term.'%')
-            ->paginate(5);
+            ->limit(6)->get();
+            
+        $noticias = Noticias::
+            where('titulo', 'LIKE', '%'.$term.'%')
+            ->limit(6)->get();
 
-        $noticias = DB::table('noticias')
-            ->where('titulo', 'LIKE', '%'.$term.'%')
-            ->paginate(5);
-
-        return view('resultados_busqueda', compact('usuarios','noticias'));
+        return view('busqueda.resultados_busqueda', compact('usuarios','noticias'));
     }
 }

@@ -8,9 +8,8 @@
 @endsection
 
 @section('content')
-
-<div class="col-md-12">
 <div class="row">
+<div class="col-md-7">
 
 @if($noticias->isEmpty())
 
@@ -22,6 +21,8 @@
 
 @else
 
+	<div class="panel panel-default">
+    <div class="panel-heading">Resultados Noticias</div>
 	<div class="list-group">
   	@foreach ($noticias as $noticia)
 
@@ -29,7 +30,7 @@
 
 		<div class="media">
 		  <div class="media-left">
-		      <img src="images/{{ $noticia->imagen }}" alt="..." class="imgNoticia">
+		      <img src="images/{{ $noticia->imagen }} " alt="..." class="imgNoticia">
 		  </div>
 		  <div class="media-body">
 		    
@@ -53,15 +54,12 @@
 	
 	@endforeach
 	</div>
+	<div class="btn-group btn-group-justified">
+  	<a href="#" class="btn btn-default">Ver mas resultados</a>
+	</div>
+	</div>
 
 @endif
-
-</div>
-{!! $noticias->render() !!}
-</div>
-
-<div class="col-md-12">
-<div class="row">
 
 @if($usuarios->isEmpty())
 
@@ -73,29 +71,52 @@
 
 @else
 
+	<div class="panel panel-default">
+    <div class="panel-heading">Resultados Usuarios</div>
+	<div class="list-group">
   	@foreach ($usuarios as $usuario)
 
-	  	<div class="col-xs-6 col-sm-6 col-md-4">
+	  	<a href='{{ url("ver_perfil/$usuario->name") }}' class="list-group-item">
 
-			<a href='{{ url("ver_perfil/$usuario->name") }}' style="text-decoration:none">
+		<div class="media">
+		  <div class="media-left">
+		      <img src="images/{{ $usuario->imagen_perfil }}" alt="..." class="imgNoticia">
+		  </div>
+		  <div class="media-body">
+		    
+			<div class="row">
+				<div class="col-md-8">
+					<h4 class="list-group-item-heading">{{ $usuario->nombres }}&nbsp;{{ $usuario->apellidos }}</h4>
+	    			<p class="list-group-item-text">{{ $usuario->mi_descripcion }}</p>
+				</div>
+			</div>
 
-	        <div class="thumbnail">
-	          <img src="images/{{ $usuario->imagen_perfil }}" id="imgthumb" alt="...">
-	          <div class="caption">
-	            <legend>{{ $usuario->nombres }}&nbsp;{{ $usuario->apellidos }}</legend>
-	            <p class="hidden-xs">{{ $usuario->mi_descripcion }}</p>          
-	          </div>
-	        </div>
+		  </div>
+		</div>	
 
-	        </a>
-	    </div>
+	  </a>
 	
 	@endforeach
+	</div>
+	<div class="btn-group btn-group-justified">
+  	<a href="#" class="btn btn-default">Ver mas resultados</a>
+	</div>
+	</div>
 
 @endif
 
 </div>
-{!! $usuarios->render() !!}
+
+
+<div class="col-md-5">
+
+	<div class="panel panel-default">
+	  <div class="panel-body">
+	   	<h3>Aca van algunos filtros para las busquedas</h3>
+	  </div>
+	</div>
+
+</div>
 </div>
 
 @endsection
